@@ -1,0 +1,11 @@
+<h1>Chat room</h1>
+<div id="messages">
+  <%= render @message %>
+  <%=  params[:id] %>
+</div>
+
+<form>
+  <label>Say something:</label><br>
+  <input type="text" data-behavior="room_speaker">
+  <input type="hidden" name="user_id" value="<%= params[:id] %>">
+</form>

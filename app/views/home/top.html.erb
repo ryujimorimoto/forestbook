@@ -1,0 +1,114 @@
+<!-- 会員 -->
+<% if user_signed_in? %>
+  <aside class="sidebar">
+    <%= render 'notes/form' %>
+  </aside>
+  <ul class="notes">
+    <h2>投稿の一覧</h2>
+    <%= render @notes %> 
+  </ul>
+<% else %>
+<!-- 新規ユーザー -->
+  <div class="top-wrapper">
+    <%#= image_tag "gatebook_cover.png" %>
+    <div class="register-wrapper">
+      <h1 class="catchcopy_1"><%= @message %></h1>
+      <p style="text-align: left;"><%= @message_description1 %><br><%= @message_description2 %></p>
+      <%= link_to simple_format("質問に答えてマイ・カウンセラーを見つける<br>(無料)"), new_user_registration_path, class: "cv_btn" %>
+    </div>
+    <div class="face_image" >  
+      <%= image_tag "home-phone.svg" ,:class => "phone_image" ,:style => "width:335px;margin-left:50%;" %>
+      <%= video_tag "1.mp4",:autoplay => true ,:loop => true, :class => "phone_video", :style => "height:478px;width:269px;left:50%;margin-left:33px;position:absolute;top:80px;" %>
+    </div>
+  </div>
+
+  <div id="service">
+    <div style="width: 80%;display: block;margin: 0 auto;">
+      <!-- 薄い緑色の背景色 -->
+      <h1 style="font-size: 50px;">どんなサービス？</h1>
+      <ul class="service_contents">
+        <li class="service_1">
+          <%= image_tag "service_Img1.png" ,:width => "100%;" %>
+        </li>
+        <li class="service_2">
+          <%= image_tag "service_Img2.png" ,:width => "100%;"  %>
+        </li>
+        <li class="service_3">
+          <%= image_tag "service_Img3.png" ,:width => "100%;"  %>
+        </li>
+      </ul>
+      <%= image_tag "key_Img.png" ,:alt => "カギ",:style => " float:left;width: 300px;" %>
+      <div style="float: right;">
+        <h1 style="font-size: 50px;margin-right: 10%;">プラインバシーの保護</h1>
+        <p>カウンセラーには守秘義務があります。<br>あなたの相談が第三者に漏れることはありません。安心してご相談できます。</p>    
+      </div>
+      <%= image_tag "convinient_Img.png" ,:alt => "便利",:style => "clear: both;float: right;width: 350px;" %>   
+      <div style="float: left;">
+        <h1 style="font-size: 50px;margin-right: 10%;">便利</h1>
+        <p>あなたの好きな場所から相談可能です。<br>お忙しい方や、身近にカウンセリングルームが無い方にお勧めです。
+        </p>    
+      </div>
+    </div>
+  </div>
+  <div id="price">
+    <div style="width: 80%;display: block;margin: 0 auto;">      
+      <h1 style="font-size: 50px;margin: 0px;padding-top: 20px;">料金プラン</h1>
+      <%= image_tag "price_Img.png" ,:alt => "料金",:style => "width: 80%;display: block;margin: 0 auto;" %>   
+    </div>
+  </div>
+
+  <div id="story">
+    <div style="width: 80%;display: block;margin: 0 auto;">    
+      <div class="story_1" style="text-align: center;">
+        <h1>私たちの物語</h1>
+        <p>このサービスの開発理由と、<br>どのようなサービスを目指しているかをご紹介します</p>
+      </div>
+      <div class="story_2">
+        <ul>
+          <li>
+            <%= image_tag "story_img1.png" ,:alt => "問題",:style => "clear: both;float: left;width: 30%;" %>
+            <div style="float: right;width: 40%;">
+              <h1>問題</h1>
+              <p>森本は、仕事の悩みを誰にも相談できずにストレスを溜め込んでいました。<br>職場の人や友人に相談するのは、恥ずかしかったためカウンセラーに相談できたらと考えていました。<br>仕事が忙しいので、オンラインで気軽に相談できるカウンセリングサービスを望んでいました。
+              </p>              
+            </div>
+      </li>
+          <li>            
+            <%= image_tag "story_img2.png" ,:alt => "検討",:style => "clear: both;float: right;width: 25%;margin-right: 7%;" %>
+            <div style="float: left;width: 40%;">
+              <h1>検討</h1>
+              <p>いくつかのカウンセリングサービスに登録し、相談に乗ってもらいましたが、<br>料金が高く、時間も短いので悩みを解決することはできませんでした。<br>その他のサービスを探しましたが、残念ながら気軽に継続的なサポートを受けられるサービスはありませんでした。
+              </p>
+            </div>
+          </li>
+          <li>                  
+            <%= image_tag "story_img3.png" ,:alt => "解決策",:style => "clear: both;float: left;width: 20%;margin-left: 10%;" %>
+            <div style="float: right;width: 40%;">
+              <h1>解決策</h1>
+              <p>森本は市場に大きな穴があることを知った後、同じジレンマに落ちいっている多くの人たちを助けるチャンスだと気づきました。<br>そこで、低価格で継続的なサポートを受けられるサービスの開発を行うことにしました。
+              </p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div style="text-align: center;">
+    
+      <%= link_to simple_format("質問に答えてマイ・カウンセラーを見つける<br>(無料)"), new_user_registration_path, class: "cv_btn" %>
+  </div>
+
+<footer class="footer_links">
+  <div> 
+    <ul style="text-align: center;margin: 0 auto;padding-bottom: 10px;">
+      <li><a href="" title="会社概要">会社概要</a></li>
+      <li><a href="" title="利用規約">利用規約</a></li>
+      <li><a href="" title="プライバシーポリシー">プライバシーポリシー</a></li>
+      <li><a href="" title="お問合せ">お問合せ</a></li>
+      <li><a href="" title="特定商取引法に基づく表記">特定商取引法に基づく表記</a></li>
+    </ul>
+  </div>
+  <div style="border-bottom: solid 1px white; width: 80%;margin: 0 auto;padding-bottom: 5px;"></div>
+</footer>
+
+<% end %>

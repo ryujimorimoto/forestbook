@@ -1,0 +1,102 @@
+.top-wrapper {
+  width: 100%;
+  height: 450px;
+  overflow: hidden;
+  margin: 0 auto;
+  text-align: center;
+  background-image: url(fv_background_img.jpg);
+}
+
+.catchcopy_1{
+  font-size: 50px;
+}
+
+.register-wrapper {
+	float:left;
+    width: 50%;
+    padding: 15px;
+    position:relative;
+}
+
+.cv_btn {
+  padding: 8px 24px;
+  color: white;
+  display: inline-block;
+  opacity: 0.8;
+  border-radius: 3px;
+  border: 1px solid transparent;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #239b76;
+  margin-top:30px;
+}
+
+.face_image {
+    float:left;
+    height:400px;
+    position:relative;
+}
+
+#service {
+	background-color: #e0f5ee;
+	display: inline-block;
+	width: 100%;
+	clear:both;
+}
+.service_contents {	
+	width: 90%;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.service_contents li{
+	width: 25%;
+	display: inline-block;
+	vertical-align: top;
+	margin: 0px 30px;
+}
+
+#price {
+  background-color: #a5ffed;
+}
+
+.price_table {
+	text-align: center;
+}
+
+#story {	
+	background-color: #ffebc9;
+	display: inline-block;
+	width: 100%;
+	clear:both;
+}
+
+.story_2 {
+  display: inline-block;
+  background-image: url(arrow_bgImg.png); 
+  background-repeat: no-repeat;
+  background-position: center;
+  background-position-y: 35px;  
+  background-size: 50px;
+}
+
+
+
+.story_2 li {
+	display: block;
+}
+
+
+.footer_links {
+	background-color: #53524E;
+}
+
+
+.footer_links li{
+	display: inline-block;
+	margin: 0 10px;
+}
+
+ .footer_links a{
+ 	color: white;
+ }

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+  <title>気軽にカウンセリングができる - ForestBook -</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <header class="navbar">
+    <div class="container navbar_container">
+      <div id="logo"><%= link_to "ForestBook", root_path %></div>
+      <% if user_signed_in? %>
+        <ul class="header-right">
+          <li><%= link_to "ユーザー一覧", users_path %></li>
+          <li><%= link_to current_user.email, current_user %></li>
+          <li><%= link_to "支払い", charges_path %></li>
+          <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+        </ul>
+      <% else %>
+        <ul class="header-right">
+          <!-- <li><%= link_to "概要（削除予定）", about_path %></li> -->
+          <li><a href="/#service">サービス内容</a></li>
+          <li><a href="/#price">料金</a></li>
+          <li><a href="/#story">私達の物語</a></li>
+          <li><%= link_to "新規登録", new_user_registration_path %></li>
+          <li><%= link_to "ログイン", new_user_session_path %></li>
+        </ul>
+      <% end %>
+    </div>
+  </header>
+  
+  <div class="container">
+    <p class="alert alert-success"><%= notice %></p>
+    <p class="alert alert-danger"><%= alert %></p>
+     <%= yield %>
+  </div>
+
+  <div class="container" style="background-color: #53524E;color: white;text-align: center;" >
+        &copy; ForestBook All rights reserved.
+  </div>
+</body>
+</html>
